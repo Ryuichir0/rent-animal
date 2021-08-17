@@ -1,0 +1,11 @@
+<%= form_for(@booking) do |f| %>
+  <%= f.label :reservation_date %>
+  <%= f.date_field :check_in %>
+  <%= f.label :end_of_reservation %>
+  <%= f.date_field :check_out %>
+  <%= f.label :herd %>
+  <%= f.hidden_field :herd_id %>
+  <%= f.label :total_price %>
+  <%= f.number_field :total_price %>
+  <%= f.submit %>
+<% end %>
