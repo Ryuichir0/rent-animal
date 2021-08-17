@@ -1,6 +1,7 @@
 class HerdsController < ApplicationController
+  before_action :authenticate_user!
   def index
-    @herds = Herd.all
+    @herds = Herd.where(id: current_user)
   end
 
   def new
@@ -18,10 +19,17 @@ class HerdsController < ApplicationController
   end
 
   def edit
-    
+    @herd = Herd.find(params[:id])
+    @herd = Herd.update(herd_params)
+    if @herd.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def update
+
   end
 
   def destroy
