@@ -6,7 +6,7 @@
     <p><%= booking.check_in %></p>
     <p><%= booking.check_out %></p>
     <p><%= booking.amount %>€</p>
-    <%= link_to 'Home', root_path %>
-    <%= link_to 'Edit', edit_booking_path %>
-    <%= link_to "Remove", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
+    <%= link_to 'Home', root_path,  class: "btn btn-flat"  %>
+    <%= link_to 'Edit', edit_booking_path,  class: "btn btn-flat"  %>
+    <%= link_to "Remove", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" },  class: "btn btn-flat"  %>
 </div>
