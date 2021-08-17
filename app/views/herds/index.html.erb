@@ -1,12 +1,15 @@
-<h1>Herds#index</h1>
-<p>Find me in app/views/herds/index.html.erb</p>
+<h1>Herds</h1>
+<p>Welcome in our world of pure nature</p>
 
 <div>
+  <% if @herds %>
   <% @herds.each do |herd| %>
     <h2><%= herd.name %></h2>
-    <p><%= herd.type %></p>
+    <p><%= herd.species %></p>
     <p><%= herd.description %></p>
     <p><%= herd.unit_price %></p>
-    <%= link_to 'Book this', new_booking_path(@herd) %>
+    <%= link_to 'Book this', new_booking_path(@herd),  class: "btn btn-flat"  %>
   <% end %>
 </div>
+
+<%= link_to 'Create a herd', new_herd_path,  class: "btn btn-flat"  %>
