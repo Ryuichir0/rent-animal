@@ -4,5 +4,8 @@
     <p>Change your life and make a good decision, choose them.</p>
     <%= link_to "Sign up", new_user_registration_path, class: "btn btn-flat" %>
   </div>
-
 </div>
+ <%= link_to "Céer un troupeau", :new_herd %>
+ <% Herd.all.each do |herd| %>
+ <%= herd.name %>
+ <% end %>
