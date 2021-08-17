@@ -1,0 +1,7 @@
+<%= simple_form_for [ @herd ] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :type %>
+  <%= f.input :price %>
+  <%= f.submit "Submit herd ", class: "btn btn-primary" %>
+<% end %>
