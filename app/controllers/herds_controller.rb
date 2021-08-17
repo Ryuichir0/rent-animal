@@ -4,6 +4,9 @@ class HerdsController < ApplicationController
     @herds = Herd.where(user_id: current_user)
   end
 
+  def show 
+    @herd = Herd.find(params[:id])
+  end 
   def new
     @herd = Herd.new
   end
