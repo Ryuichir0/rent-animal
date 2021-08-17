@@ -1,6 +1,7 @@
 <h1>Herds#new</h1>
 <p>Find me in app/views/herds/new.html.erb</p>
 
+<%= render "form", herd: @herd %>
 <%= simple_form_for [ @herd ] do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
