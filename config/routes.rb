@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  get "/herds", to: "herds#index", as: :herds
-  get "/herds/:id", to: "herds#show", as: :herd
+  
+  get "/dashboard", to: "herds#index", as: :herds
   get "/herds/new", to: "herds#new", as: :new_herd
+  get "/herds/:id", to: "herds#show", as: :herd
   post "/herds", to: "herds#create"
   get "/herds/:id/edit", to: "herds#edit", as: :edit_herd
   patch "/herds/:id", to: "herds#update"
