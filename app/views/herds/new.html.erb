@@ -1,11 +1,3 @@
-<h1>Herds#new</h1>
-<p>Find me in app/views/herds/new.html.erb</p>
+<h1>Herd</h1>
 
 <%= render "form", herd: @herd %>
-<%= simple_form_for [ @herd ] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :species %>
-  <%= f.input :unit_price %>
-  <%= f.submit "Submit herd ", class: "btn btn-primary" %>
-<% end %>
