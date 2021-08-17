@@ -1,7 +1,7 @@
 class HerdsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @herds = Herd.where(id: current_user)
+    @herds = Herd.where(user_id: current_user)
   end
 
   def new
@@ -12,7 +12,7 @@ class HerdsController < ApplicationController
       @herd = Herd.new(herd_params)
       @herd.user = current_user
       if @herd.save
-        redirect_to root_path
+        redirect_to herds_path
       else
         render :new
       end
