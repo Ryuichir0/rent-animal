@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "/dashboard", to: "herds#index", as: :herds
   get "/herds/new", to: "herds#new", as: :new_herd
   get "/herds/:id", to: "herds#show", as: :herd
-  post "/herds", to: "herds#create"
+  post "/dashboard", to: "herds#create"
   get "/herds/:id/edit", to: "herds#edit", as: :edit_herd
   patch "/herds/:id", to: "herds#update"
   delete "herds/:id", to: "herds#destroy"

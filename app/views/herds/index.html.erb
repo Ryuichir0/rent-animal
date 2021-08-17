@@ -1,15 +1,20 @@
 <h1>Herds</h1>
 <p>Welcome in our world of pure nature</p>
-
-<div>
   <% if @herds %>
   <% @herds.each do |herd| %>
-    <h2><%= herd.name %></h2>
-    <p><%= herd.species %></p>
-    <p><%= herd.description %></p>
-    <p><%= herd.unit_price %></p>
-    <%= link_to 'Book this', new_booking_path(@herd),  class: "btn btn-flat"  %>
+    <div class="card-trip">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= herd.name %></h2>
+          <p><%= herd.species %></p>
+          <p> <%= herd.description %><p>
+        </div>
+        <h2 class="card-trip-pricing"><%= herd.name %>£99.99</h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+    </div>
   <% end %>
+<% end %>
 </div>
-
 <%= link_to 'Create a herd', new_herd_path,  class: "btn btn-flat"  %>
