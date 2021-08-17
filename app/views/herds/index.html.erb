@@ -1,2 +1,12 @@
 <h1>Herds#index</h1>
 <p>Find me in app/views/herds/index.html.erb</p>
+
+<div>
+  <% @herds.each do |herd| %>
+    <h2><%= herd.name %></h2>
+    <p><%= herd.type %></p>
+    <p><%= herd.description %></p>
+    <p><%= herd.unit_price %></p>
+    <%= link_to 'Book this', new_booking_path(@herd) %>
+  <% end %>
+</div>
