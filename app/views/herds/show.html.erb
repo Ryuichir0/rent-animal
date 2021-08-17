@@ -1,0 +1,13 @@
+ <div class="card-trip">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= @herd.name %></h2>
+            <p><%= @herd.species %></p>
+            <p> <%= @herd.description %><p>
+          </div>
+          <h2 class="card-trip-pricing"><%= @herd.unit_price%>€</h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
+      </div>
+      <%= link_to 'return to Dashboard', herds_path,  class: "btn btn-flat"  %>
