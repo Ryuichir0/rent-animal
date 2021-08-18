@@ -22,14 +22,13 @@
       <% end %>
     </div>
     <div class="col-map">
-      <p>Map</p>
+      <div id="map"
+        style="width: 100%; height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
   </div>
 </div>
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 <%= link_to 'Create a herd', new_herd_path,  class: "btn btn-flat"  %>
 <ul>
   <% current_user.bookings.each do |booking| %>
