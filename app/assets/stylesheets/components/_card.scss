@@ -3,6 +3,9 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   text-decoration: none;
+  margin: 10px 0px;
+  border-radius: 10px;
+  text-decoration: none;
 }
 
 .card-trip > img {
@@ -30,6 +33,7 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  text-decoration: none;
 }
 
 .card-trip-infos .card-trip-user {
