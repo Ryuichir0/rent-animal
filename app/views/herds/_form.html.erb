@@ -1,7 +1,10 @@
-<%= simple_form_for [ @herd ] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :species %>
-  <%= f.input :unit_price %>
-  <%= f.submit "Create herd ", class: "btn btn-flat" %>
-<% end %>
+<div class="container">
+  <%= simple_form_for [ @herd ] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :species %>
+    <%= f.input :unit_price %>
+    <%= f.submit "Create herd ", class: "btn btn-flat" %>
+    <%= link_to 'Dashboard', herds_path,  class: "btn btn-flat"  %>
+  <% end %>
+</div>
