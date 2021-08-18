@@ -27,3 +27,12 @@
   </div>
 </div>
 <%= link_to 'Create a herd', new_herd_path,  class: "btn btn-flat"  %>
+<ul>
+  <% current_user.bookings.each do |booking| %>
+  <li> <%= booking.check_in%></li>
+  <li> <%= booking.check_out%></li>
+  <li> <%= booking.amount%></li>
+  <li> <%= booking.user_id%></li>
+  <li> <%= booking.herd_id%></li>
+</ul>
+<% end %>
