@@ -1,3 +1,10 @@
 <h1>Booking</h1>
-
-<%= render "form", booking: @booking, @herd %>
+<%= simple_form_for [@herd, @booking ] do |f| %>
+  <%= f.label :reservation_date %>
+  <%= f.date_field :check_in %>
+  <%= f.label :end_of_reservation %>
+  <%= f.date_field :check_out %>
+  <%= f.label :amount %>
+  <%= f.number_field :amount %>
+  <%= f.submit "Submit Booking ", class: "btn btn-primary" %>
+<% end %>
