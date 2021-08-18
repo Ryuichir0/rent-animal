@@ -14,6 +14,7 @@ class HerdsController < ApplicationController
   def show
     @herd = Herd.find(params[:id])
   end
+
   def new
     @herd = Herd.new
   end
