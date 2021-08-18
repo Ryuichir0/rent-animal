@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_herd, only: [:index, :show, :new, :create]
   def index
-    @bookings = Booking.where(id: current_user)
+    @bookings = Booking.where(user_id: current_user)
   end
 
   def show
@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
-  
+
   def create
     @booking = Booking.new(booking_params)
     @booking.herd = @herd
@@ -30,9 +30,11 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    redirect_to herds_path
   end
-  
-  private 
+
+  private
+
   def booking_params
     params.require(:booking).permit(:check_in, :check_out, :amount, :user_id, :herd_id)
   end
