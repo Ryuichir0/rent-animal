@@ -1,3 +1,9 @@
 <h1>Booking</h1>
 
-<%= render "form", booking: @booking, @herd %>
+<div class="container">
+  <%= simple_form_for [ @herd, @booking ] do |f| %>
+    <%= f.input :check_in, as: :date %>
+    <%= f.input :check_out, as: :date %>
+    <%= f.submit "Create booking ", class: "btn btn-flat" %>
+  <% end %>
+</div>
