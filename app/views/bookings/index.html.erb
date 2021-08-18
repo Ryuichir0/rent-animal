@@ -8,12 +8,8 @@
           <p>check_in: <%= booking.check_in %></p>
           <p>check_out: <%= booking.check_out %></p>
           <p>Amount <%= booking.amount %> €</p>
-          <%= link_to "Remove",
-                  booking_path(booking),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } ,  class: "btn btn-flat" %>
+          <%= link_to icon('fas fa-trash', 'remove'), booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
         </div>
       <% end %>
-    <%= link_to 'Home', root_path,  class: "btn btn-flat"  %>
     <%= link_to 'Dashboard', herds_path,  class: "btn btn-flat"  %>
 </div>
