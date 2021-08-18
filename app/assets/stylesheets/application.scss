@@ -12,9 +12,11 @@
 @import "components/index";
 @import "pages/index";
 
+// map 
+@import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
+=======
 a {
  color:$brown-herd;
-
     &:hover {
             text-decoration:none;
             color: $bej-herd;
