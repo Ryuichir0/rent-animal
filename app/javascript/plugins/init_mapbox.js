@@ -1,4 +1,4 @@
-import mapboxgl from "mapbox-gl";
+import mapboxgl from "!mapbox-gl";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
@@ -11,20 +11,20 @@ const initMapbox = () => {
   };
 
   const mapElement = document.getElementById('map');
-  console.log(mapElement)
   if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+    console.log(markers)
     const map = new mapboxgl.Map({
       container: 'map',
-      center: [7.02, 43.55],
       style: 'mapbox://styles/mapbox/streets-v11',
+      center: [7.02, 43.55],
       zoom: 9
     });
 
-    // map.addControl(new MapboxGeocoder({
-    //   accessToken: mapboxgl.accessToken,
-    //   mapboxgl: mapboxgl
-    // }));
+    map.addControl(new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl
+    }));
 
 
     const markers = JSON.parse(mapElement.dataset.markers);
