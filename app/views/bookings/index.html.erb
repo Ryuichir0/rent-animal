@@ -21,11 +21,12 @@
           <%= date %>
             <% bookings.each do |booking| %>
               <div>
-                <p>Booking: <%= booking.id %></p>
+                <p class="booked">Booking: <%= booking.id %></p>
               </div>
             <% end %>
           <% end %>
+        <div>
         <%= link_to 'Dashboard', herds_path,  class: "btn btn-flat"  %>
+        </div>
     </div>
-
 </div>
