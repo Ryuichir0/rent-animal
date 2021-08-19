@@ -44,6 +44,7 @@ class HerdsController < ApplicationController
   end
 
   def destroy
+    redirect_to herds_path
   end
 end
 

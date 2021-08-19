@@ -8,11 +8,9 @@
             <p>ID: <%= booking.id %></p>
             <p>check_in: <%= booking.check_in %></p>
             <p>check_out: <%= booking.check_out %></p>
-            <p>Amount <%= booking.amount %> €</p>
-            <%= link_to "Remove",
-                    booking_path(booking),
-                    method: :delete,
-                    data: { confirm: "Are you sure?" } ,  class: "btn btn-flat" %>
+            <p>Total Amount <%= booking.amount %> €</p>
+            <%= link_to icon('fas fa-pen', 'edit'), edit_herd_booking_path(@herd, booking.id) %>
+            <%= link_to icon('fas fa-trash', 'remove'), booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
           </div>
         <% end %>
       <% end %>
