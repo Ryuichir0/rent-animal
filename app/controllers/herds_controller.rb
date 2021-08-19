@@ -3,7 +3,7 @@ class HerdsController < ApplicationController
   def index
     # @herds = Herd.where(user_id: current_user)
 
-    if params[:query]
+    if params[:query] && params[:query] != ""
       @herds = Herd.search_by_name_and_address(params[:query])
     else
       @herds = Herd.all
@@ -57,5 +57,5 @@ end
 private
 
 def herd_params
-  params.require(:herd).permit(:name, :description, :address, :unit_price, :species)
+  params.require(:herd).permit(:name, :description, :address, :unit_price, :species, :photo)
 end
