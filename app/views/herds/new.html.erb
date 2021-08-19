@@ -6,6 +6,7 @@
       <%= f.input :address %>
       <%= f.input :description %>
       <%= f.input :species %>
+       <%= f.input :photo, as: :file, input_html: { multiple: true }%>
       <%= f.input :unit_price %>
       <%= f.submit "Create", class: "btn btn-flat" %>
       <%= link_to 'Dashboard', herds_path,  class: "btn btn-flat"  %>

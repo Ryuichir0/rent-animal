@@ -1,5 +1,6 @@
 class Herd < ApplicationRecord
   belongs_to :user
+  has_one_attached :photo
 
   validates :unit_price, presence: true
   validates :name, presence: true, uniqueness: true

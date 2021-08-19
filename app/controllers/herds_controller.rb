@@ -57,5 +57,5 @@ end
 private
 
 def herd_params
-  params.require(:herd).permit(:name, :description, :address, :unit_price, :species)
+  params.require(:herd).permit(:name, :description, :address, :unit_price, :species, :photo)
 end
