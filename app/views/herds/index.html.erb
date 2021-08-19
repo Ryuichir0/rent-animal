@@ -1,7 +1,5 @@
   <div class="wrapper">
     <div class="col-cards">
-     <h1>Herds</h1>
-      <p>Welcome in our world of pure nature</p>
       <% if @herds %>
         <% @herds.each do |herd| %>
           <%= link_to herd_path(herd), :action => 'go' do %>
@@ -29,18 +27,4 @@
       </div>
     </div>
   </div>
-
 </div>
-<div class="container">
-<div class="row justify-content-center">
-  <div class="col-sm-8">
-    <div id="herds">
-      <% @herds.each do |herd| %>
-        <h4><%= herd.name %></h4>
-        <p><%= herd.address %></p>
-      <% end %>
-    </div>
-  </div>
-</div>
-</div>
-<%= link_to 'Create a herd', new_herd_path,  class: "btn btn-flat"  %>
