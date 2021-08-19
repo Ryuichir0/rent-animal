@@ -1,31 +1,32 @@
-<h1>Herds</h1>
-<p>Welcome in our world of pure nature</p>
-<div class="wrapper">
-  <div class="col-cards">
-    <% if @herds %>
-      <% @herds.each do |herd| %>
-        <%= link_to herd_path(herd), :action => 'go' do %>
-          <div class="card-trip">
-            <%= image_tag ('horses.jpg') %>
-              <div class="card-trip-infos">
-                <div>
-                  <h2><%= herd.name %></h2>
-                  <p><%= herd.species %></p>
-                  <p> <%= herd.description %><p>
-                </div>
-                <h2 class="card-trip-pricing"><%= herd.unit_price %> € /day</h2>
-                <%= image_tag ('avatar.JPG'), :class => "card-trip-user avatar-bordered" %>
+  <div class="wrapper">
+    <div class="col-cards">
+     <h1>Herds</h1>
+      <p>Welcome in our world of pure nature</p>
+      <% if @herds %>
+        <% @herds.each do |herd| %>
+          <%= link_to herd_path(herd), :action => 'go' do %>
+            <div class="card-product">
+              <%= image_tag ('horses.jpg'), {id: 'product-photo'} %>
+              <div class="card-product-infos">
+                <h5><%= herd.name %></h2>
+                <h5><%= herd.species %></h5>
+                <p><%= herd.description %></p>
+                <h5><%= herd.address %></h4>
+                <h5><%= herd.unit_price%> € /day</h5>
               </div>
+              <%= image_tag ('avatar.JPG'), :class => "avatar-bordered-product" %>
             </div>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
-    </div>
-    <div class="col-map">
-      <div id="map"
-        style="width: 100%; height: 700px; border-radius: 10px; margin: 5px 0px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        <%= link_to 'Create a herd', new_herd_path,  class: "btn btn-flat"  %>
+      </div>
+      <div class="col-map">
+        <div id="map"
+          style="width: 100%; height: 600px; border-radius: 10px; margin: 5px 0px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      </div>
     </div>
   </div>
 
