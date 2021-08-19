@@ -7,6 +7,17 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
+  <div class="search-form-control form-group">
+  <%= simple_form_for :search, url: herds_path, method: :get do |f| %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a herd"
+    %>
+    <%= submit_tag "Search", class: "btn btn-gradient" %>
+
+  <% end %>
+  </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -35,4 +46,5 @@
       <% end %>
     </ul>
   </div>
+
 </div>
