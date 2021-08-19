@@ -3,6 +3,7 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
@@ -25,6 +26,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox'
 import { initAutocomplete } from '../plugins/init_autocomplete'
+
 
 
 document.addEventListener('turbolinks:load', () => {

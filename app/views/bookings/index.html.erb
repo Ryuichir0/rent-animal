@@ -1,10 +1,10 @@
-
-<div class="container">
+<div class="wrapper-calendar">
+   <div class="col-bookings">
     <h1>Bookings</h1>
       <% @bookings.each do |booking| %>
         <% if booking.herd_id == @herd.id %>
           <div class="card-trip">
-            <p>Name: <%= booking.herd.name %></p>
+            <h2>Name: <%= booking.herd.name %></h2>
             <p>ID: <%= booking.id %></p>
             <p>check_in: <%= booking.check_in %></p>
             <p>check_out: <%= booking.check_out %></p>
@@ -14,5 +14,19 @@
           </div>
         <% end %>
       <% end %>
-    <%= link_to 'Dashboard', herds_path,  class: "btn btn-flat"  %>
+    </div>
+    <div id="col-calendar">
+    <h1></h1>
+        <%= month_calendar(events: @bookings) do |date, bookings| %>
+          <%= date %>
+            <% bookings.each do |booking| %>
+              <div>
+                <p class="booked">Booking: <%= booking.id %></p>
+              </div>
+            <% end %>
+          <% end %>
+        <div>
+        <%= link_to 'Dashboard', herds_path,  class: "btn btn-flat"  %>
+        </div>
+    </div>
 </div>

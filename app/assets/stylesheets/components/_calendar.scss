@@ -1,0 +1,52 @@
+.wrapper-calendar {
+display: flex;
+}
+
+#col-calendar {
+  margin-top:70px;
+  height: 130vh;
+  position: sticky;
+  top:0;
+  width:66%;
+}
+
+.col-bookings{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap:16px;
+  flex-grow: 1;
+  margin: 0 16px;
+}
+
+.booked {
+  background-color: rgb(63, 52, 52);
+  color:rgb(231, 223, 223);
+
+}
+
+.simple-calendar {
+  .day {
+
+
+  }
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {}
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month { }
+  .current-month {}
+
+  .has-events {}
+}
