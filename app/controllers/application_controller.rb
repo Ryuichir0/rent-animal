@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def after_sign_in_path_for(_resources)
+  def after_sign_in_path_for(_resource)
     herds_path
   end
 

@@ -1,0 +1,47 @@
+.top-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-decoration: none;
+  margin: 10px 0px;
+  border-radius: 10px;
+  text-decoration: none;
+  height: 300px;
+  width: 300px;
+
+}
+
+.top-card > img {
+  height: 225px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.top-card h2 {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.top-card p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.top-card .top-card-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  text-decoration: none;
+}
+
+.top-card-infos .top-card-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
