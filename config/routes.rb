@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :herds do
     resources :bookings
   end
-  resources :bookings, only: [:destroy]
+  resources :bookings, only: [:destroy, :edit]
+  resources :herds, only: [:destroy, :edit]
   # get "/dashboard", to: "herds#index", as: :herds
   #get "/herds/new", to: "herds#new", as: :new_herd
   #get "/herds/:id", to: "herds#show", as: :herd
