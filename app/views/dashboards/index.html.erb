@@ -1,0 +1,38 @@
+<div class="bg-light border container">
+
+  <div class="bg-light d-flex "> 
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: " w-25 avatar-bordered", alt: "avatar-bordered" %>
+    <div class="p-5 w-50 dashboard-profile-infos">
+      <h4 class="p-2">Pseudo :<%= current_user.name %></h4>  
+      <h4 class="p-2">Birth : <%= current_user.birthdate %></h4>  
+      <h4 class="p-2">Phone Number: <%= current_user.phone %></h4>  
+      <h4 class="p-2">Email : <%= current_user.email %></h4>  
+    </div>
+  </div>
+  <div class="mt-2 wrapper">
+      <div class="dashboard-bookings">
+        <h2>Current bookings</h1>
+      <% current_user.bookings.each do |booking| %>
+          <div class="card-trip">
+            <p>Name: <%= booking.herd.name %></p>
+            <p>check_in: <%= booking.check_in %></p>
+            <p>check_out: <%= booking.check_out %></p>
+            <p>Total Amount <%= booking.amount %> €</p>
+             <%= link_to icon('fas fa-pen', 'edit'), edit_herd_booking_path(booking.herd_id, booking.id) %>
+            <%= link_to icon('fas fa-trash', 'remove'), booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
+          </div>
+      <% end %>
+      </div>
+      <div class="dashboard-herds">
+      <h2>Current Herds</h1>
+      <% current_user.herds.each do |herd| %>
+          <div class="card-trip">
+            <p>Name: <%= herd.name %></p>
+            <p>description: <%= herd.description %></p>
+            <p>Prix: <%= herd.unit_price %> €</p>
+            <%= link_to icon('fas fa-trash', 'remove'), herd_path(herd), method: :delete, data: { confirm: "Are you sure?" } %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
