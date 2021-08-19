@@ -5,9 +5,12 @@ class ApplicationController < ActionController::Base
 
   before_action :update_allowed_parameters, if: :devise_controller?
 
-  def after_sign_in_path_for(resources)
+  private
+
+  def after_sign_in_path_for()
     herds_path
   end
+
   protected
 
   def update_allowed_parameters
