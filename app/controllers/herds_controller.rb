@@ -1,7 +1,13 @@
 class HerdsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @herds = Herd.where(user_id: current_user)
+    # @herds = Herd.where(user_id: current_user)
+
+    if params[:query]
+      @herds = Herd.search_by_name_and_address(params[:query])
+    else
+      @herds = Herd.all
+    end
     @markers = @herds.geocoded.map do |herd|
       {
         lat: herd.latitude,
