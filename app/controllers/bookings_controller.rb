@@ -40,6 +40,6 @@ class BookingsController < ApplicationController
   end
 
   def set_herd
-    @herd = Herd.find(1)
+    @herd = Herd.find(params[:herd_id])
   end
 end
