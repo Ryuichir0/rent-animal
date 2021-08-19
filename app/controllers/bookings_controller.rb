@@ -17,16 +17,25 @@ class BookingsController < ApplicationController
     @booking.herd = @herd
     @booking.user = current_user
     if @booking.save
-      redirect_to herds_path
+      redirect_to herd_bookings_path
     else
       render :new
     end
   end
 
   def edit
+    @booking = Booking.find(params[:id])
   end
 
   def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    herd_id = @booking.herd_id
+    if @booking.save
+      redirect_to herd_bookings_path(herd_id)
+    else
+      render :new
+    end
   end
 
   def destroy
