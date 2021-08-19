@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  
   devise_for :users
   root to: 'pages#home'
   resources :herds do
     resources :bookings
   end
+  get 'dashboards/index'
   resources :bookings, only: [:destroy, :edit]
   resources :herds, only: [:destroy, :edit]
   # get "/dashboard", to: "herds#index", as: :herds
