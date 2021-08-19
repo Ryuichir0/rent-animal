@@ -13,7 +13,7 @@
       <div class="dashboard-bookings">
         <h2>Current bookings</h1>
       <% current_user.bookings.each do |booking| %>
-          <div class="card-trip">
+          <div class="p-3 card-trip">
             <p>Name: <%= booking.herd.name %></p>
             <p>check_in: <%= booking.check_in %></p>
             <p>check_out: <%= booking.check_out %></p>
@@ -26,8 +26,9 @@
       <div class="dashboard-herds">
       <h2>Current Herds</h1>
       <% current_user.herds.each do |herd| %>
-          <div class="card-trip">
+          <div class=" p-3 card-trip">
             <p>Name: <%= herd.name %></p>
+            <p>ID: <%= herd.id %></p>
             <p>description: <%= herd.description %></p>
             <p>Prix: <%= herd.unit_price %> €</p>
             <%= link_to icon('fas fa-trash', 'remove'), herd_path(herd), method: :delete, data: { confirm: "Are you sure?" } %>

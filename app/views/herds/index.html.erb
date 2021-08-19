@@ -4,7 +4,11 @@
         <% @herds.each do |herd| %>
           <%= link_to herd_path(herd), :action => 'go' do %>
             <div class="card-product">
-              <%= image_tag ('horses.jpg'), {id: 'product-photo'} %>
+            <% if herd.photo.attached? %>
+              <%= cl_image_tag herd.photo.key, {id: 'product-photo'} %>
+            <% else %>
+            <%= image_tag ('horses.jpg'), {id: 'product-photo'} %>
+            <% end %>
               <div class="card-product-infos">
                 <h5><%= herd.name %></h2>
                 <h5><%= herd.species %></h5>
@@ -19,7 +23,7 @@
       <% end %>
         <%= link_to 'Create a herd', new_herd_path,  class: "btn btn-flat"  %>
       </div>
-      <div class="col-map">
+      <div>
         <div id="map"
           style="width: 100%; height: 600px; border-radius: 10px; margin: 5px 0px;"
           data-markers="<%= @markers.to_json %>"
