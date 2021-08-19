@@ -30,7 +30,9 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    redirect_to herds_path
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to herd_bookings_path(@herd)
   end
 
   private
