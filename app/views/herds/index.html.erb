@@ -10,7 +10,7 @@
             <%= image_tag ('horses.jpg'), {id: 'product-photo'} %>
             <% end %>
               <div class="card-product-infos">
-                <h2><%= herd.name.capitalize! %></h2>
+                <h2><%= herd.name %></h2>
                 <p><i class="pr-2 fas fa-frog"></i><%= herd.species.capitalize%></p>
                 <p><i class="pr-2 fas fa-file-prescription"></i><%= herd.description.capitalize %></p>
                 <p><i class="pr-2 fas fa-map-marker-alt"></i><%= herd.address.upcase %></p>
