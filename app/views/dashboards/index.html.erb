@@ -6,10 +6,10 @@
         <%= image_tag ('avatar.jpg'), class: " m-3 w-25 avatar-bordered", alt: "avatar-bordered" %> 
       <% end %>
     <div class="p-5 w-50 dashboard-profile-infos">
-      <h4 class="p-2">Pseudo: <%= current_user.name %></h4>
-      <h4 class="p-2">Birthdate: <%= %></h4>
-      <h4 class="p-2">Phone Number: <%= current_user.phone %></h4>
-      <h4 class="p-2">Email: <%= current_user.email %></h4>
+      <h4><i class="p-3 fas fa-frogfas fa-user"></i><%= current_user.name %></h4>
+      <h4><i class="p-3 fas fa-map-marker-alt"></i><%= current_user.address %></h4>
+      <h4><i class="p-3 fas fa-envelope-open"></i><%= current_user.email %></h4>
+      <h4><i class="p-3 fas fa-phone"></i><%= current_user.phone %></h4>
     </div>
   </div>
   <div class="mt-2 wrapper">
