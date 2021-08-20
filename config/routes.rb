@@ -5,14 +5,11 @@ Rails.application.routes.draw do
   resources :herds do
     resources :bookings
   end
-<<<<<<< HEAD
   resources :bookings, only: [:destroy, :update]
   resources :herds, only: [:destroy, :edit, :update]
-=======
   get 'dashboards/index'
   resources :bookings, only: [:destroy, :edit]
   resources :herds, only: [:destroy, :edit]
->>>>>>> 8b87a6291b1494a7b0a7e66382c4af1651f31ed7
   # get "/dashboard", to: "herds#index", as: :herds
   #get "/herds/new", to: "herds#new", as: :new_herd
   #get "/herds/:id", to: "herds#show", as: :herd
