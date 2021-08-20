@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-puts 'Creating 20 fake herds...'
+puts 'Creating 10 fake user and herds...'
 
 10.times do
-  user = User.create(name: Faker::Name.name, email: Faker::Internet.email, password: rand(600000..7000000))
+  user = User.create(name: Faker::Name.name, email: Faker::Internet.email, password: rand(600000..7000000), phone: "0 + #{Faker::PhoneNumber.subscriber_number(length: 9)}")
   herd = Herd.new(
     name: Faker::Creature::Animal.name,
     description: "A very kind animal, you'll enjoy running with them in the landscape with a dog of course",
