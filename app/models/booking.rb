@@ -16,4 +16,8 @@ class Booking < ApplicationRecord
   def total_amount
     return (check_out - check_in) / 86_400 * herd.unit_price
   end
+
+  def days_booked
+    return (check_out - check_in) / 86_400
+  end
 end

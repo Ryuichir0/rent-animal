@@ -16,7 +16,7 @@
       <%= link_to icon('fas fa-trash', 'remove'), herd_path, method: :delete, data: { confirm: "Are you sure?" } %>
     </div>
     <div class="card-product-price">
-      <h2><%= @herd.unit_price%> € /day</h2>
+      <h2><%= number_with_precision(@herd.unit_price, delimiter: " ", precision: 2) %> € /day</h2>
     </div>
     <%= image_tag ('avatar.JPG'), :class => "avatar-bordered-product" %>
   </div>
