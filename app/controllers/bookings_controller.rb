@@ -11,7 +11,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
-
   def create
     @booking = Booking.new(booking_params)
     @booking.herd = @herd

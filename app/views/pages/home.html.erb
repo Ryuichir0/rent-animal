@@ -16,9 +16,11 @@
         <%= image_tag ('horses.jpg'), {id: 'product-photo'} %>
       <% end %>
         <div class="top-card-infos">
-          <div class="design">
-            <h2><%= herd.name %></h2>
-            <h2><%= herd.address %></h2>
+          <div class = "design">
+          <div class = "design-infos">
+            <p><%= herd.name %></p>
+            <p><%= herd.address %></p>
+          </div>
             <h2><%= number_with_precision(herd.unit_price, delimiter: " ", precision: 2)%> € /day</h2>
           </div>
         </div>

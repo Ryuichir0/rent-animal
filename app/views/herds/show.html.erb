@@ -12,8 +12,10 @@
       <h5><%= @herd.species %></h5>
       <p> <%= @herd.description %></p>
       <h4><%= @herd.address %></h4>
-      <%= link_to icon('fas fa-pen','edit'), edit_herd_path %>
-      <%= link_to icon('fas fa-trash', 'remove'), herd_path, method: :delete, data: { confirm: "Are you sure?" } %>
+      <% if @herd.user_id == current_user.id %>
+        <%= link_to icon('fas fa-pen','edit'), edit_herd_path %>
+        <%= link_to icon('fas fa-trash', 'remove'), herd_path, method: :delete, data: { confirm: "Are you sure?" } %>
+      <% end %>
     </div>
     <div class="card-product-price">
       <h2><%= number_with_precision(@herd.unit_price, delimiter: " ", precision: 2) %> € /day</h2>
