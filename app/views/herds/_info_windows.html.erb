@@ -1,3 +1,7 @@
-<h2><%= herd.name %></h2>
-<p><%= herd.description %></p>
-<p><%= herd.species %></p>
+  <div class="herd-card-map">
+    <h2><%= herd.name.capitalize %></h2>
+    <%= cl_image_tag herd.photo.key, :class => "card-img-top" %>
+    <p><i class="pr-2 fas fa-frog"></i><%= herd.species.capitalize%></p>
+    <p><i class="pr-2 fas fa-file-prescription"></i><%= herd.description.capitalize %></p>
+    <p><i class="pr-2 fas fa-map-marker-alt"></i><%= herd.address.upcase %></p>
+  </div>
