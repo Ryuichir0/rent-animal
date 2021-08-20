@@ -7,14 +7,14 @@
       <% end %>
     <div class="p-5 w-50 dashboard-profile-infos">
       <h4 class="p-2">Pseudo: <%= current_user.name %></h4>
-      <h4 class="p-2">Birth: <%= current_user.birthdate %></h4>
+      <h4 class="p-2">Birthdate: <%= %></h4>
       <h4 class="p-2">Phone Number: <%= current_user.phone %></h4>
       <h4 class="p-2">Email: <%= current_user.email %></h4>
     </div>
   </div>
   <div class="mt-2 wrapper">
       <div class="dashboard-bookings">
-        <h2>Current bookings</h1>
+        <h2>Current bookings: <%= current_user.bookings.count %></h1>
       <% current_user.bookings.each do |booking| %>
           <div class="p-3 card-trip">
             <p>Name: <strong><%= link_to booking.herd.name , herd_path(booking.herd) %></strong></p>
@@ -31,7 +31,7 @@
       <% end %>
       </div>
       <div class="dashboard-herds">
-      <h2>Current Herds</h1>
+      <h2>Current Herds: <%= current_user.herds.count %></h1>
       <% current_user.herds.each do |herd| %>
           <div class=" p-3 card-trip">
             <p>Name: <strong><%= herd.name %></strong></p>
