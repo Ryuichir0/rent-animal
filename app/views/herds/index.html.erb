@@ -14,7 +14,7 @@
                 <p><i class="pr-2 fas fa-frog"></i><%= herd.species.capitalize%></p>
                 <p><i class="pr-2 fas fa-file-prescription"></i><%= herd.description.capitalize %></p>
                 <p><i class="pr-2 fas fa-map-marker-alt"></i><%= herd.address.upcase %></p>
-                <p><i class="pr-2 fas fa-dollar-sign"><%= number_with_precision(herd.unit_price, delimiter: " ", precision: 2)%> € /day</p>
+                <p><i class="pr-2 fas fa-dollar-sign"></i><%= number_with_precision(herd.unit_price, delimiter: " ", precision: 2)%> € /day</p>
               </div>
             <% if herd.user.avatar.attached? %>
               <%= cl_image_tag herd.user.avatar.key, :class => "avatar-bordered-product" %>
@@ -34,5 +34,3 @@
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
       </div>
     </div>
-  </div>
-</div>
