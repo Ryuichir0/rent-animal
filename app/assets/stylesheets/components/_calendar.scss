@@ -31,8 +31,7 @@ display: flex;
 
 .simple-calendar {
   .day {
-
-
+    background: white;
   }
 
   .wday-0 {}
@@ -40,18 +39,26 @@ display: flex;
   .wday-2 {}
   .wday-3 {}
   .wday-4 {}
-  .wday-5 {}
-  .wday-6 {}
+  .wday-5 {
+  }
+  .wday-6 {
 
-  .today {}
+  }
+
+  .today {
+
+  }
   .past {}
   .future {}
 
-  .start-date {}
+  .start-date {
+
+  }
 
   .prev-month {}
   .next-month { }
-  .current-month {}
+  .current-month {
+  }
 
   .has-events {}
 }
