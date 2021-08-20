@@ -3,10 +3,10 @@
   <h1>Herd</h1>
   <div class="card-product">
     <% if @herd.photo.attached? %>
-              <%= cl_image_tag @herd.photo.key, {id: 'product-photo'} %>
-            <% else %>
-            <%= image_tag ('horses.jpg'), {id: 'product-photo'} %>
-            <% end %>
+      <%= cl_image_tag @herd.photo.key, {id: 'product-photo'} %>
+    <% else %>
+      <%= image_tag ('horses.jpg'), {id: 'product-photo'} %>
+    <% end %>
     <div class="card-product-infos">
       <h2><%= @herd.name %></h2>
       <h5><%= @herd.species %></h5>
@@ -18,7 +18,11 @@
     <div class="card-product-price">
       <h2><%= number_with_precision(@herd.unit_price, delimiter: " ", precision: 2) %> € /day</h2>
     </div>
-    <%= image_tag ('avatar.JPG'), :class => "avatar-bordered-product" %>
+    <% if @herd.user.avatar.attached? %>
+      <%= cl_image_tag @herd.user.avatar.key, :class => "avatar-bordered-product" %>
+    <% else %>
+      <%= image_tag ('avatar.jpg'), :class => "avatar-bordered-product"%>
+    <% end %>
   </div>
     <%= link_to 'Dashboard', herds_path,  class: "btn btn-flat"  %>
     <%= link_to 'Book this', new_herd_booking_path(@herd),  class: "btn btn-flat"  %>
