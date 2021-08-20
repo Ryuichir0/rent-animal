@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
-  
   devise_for :users
   root to: 'pages#home'
   resources :herds do
     resources :bookings
   end
-  resources :bookings, only: [:destroy, :update]
-  resources :herds, only: [:destroy, :edit, :update]
   get 'dashboards/index'
   resources :bookings, only: [:destroy, :edit]
   resources :herds, only: [:destroy, :edit]
+
   # get "/dashboard", to: "herds#index", as: :herds
   #get "/herds/new", to: "herds#new", as: :new_herd
   #get "/herds/:id", to: "herds#show", as: :herd
