@@ -1,5 +1,6 @@
 class HerdsController < ApplicationController
   before_action :authenticate_user!
+
   def index
     if params[:query] && params[:query] != ""
       @herds = Herd.search_by_name_and_address(params[:query])
@@ -14,6 +15,7 @@ class HerdsController < ApplicationController
       }
     end
   end
+
   def show
     @herd = Herd.find(params[:id])
   end
@@ -49,10 +51,10 @@ class HerdsController < ApplicationController
 
     redirect_to herds_path
   end
-end
 
-private
+  private
 
-def herd_params
-  params.require(:herd).permit(:name, :description, :address, :unit_price, :species, :photo)
+  def herd_params
+    params.require(:herd).permit(:name, :description, :address, :unit_price, :species, :photo)
+  end
 end

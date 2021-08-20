@@ -2,7 +2,11 @@
 <div class="container">
   <h1>Herd</h1>
   <div class="card-product">
-    <%= image_tag ('horses.jpg'), {id: 'product-photo'} %>
+    <% if @herd.photo.attached? %>
+              <%= cl_image_tag @herd.photo.key, {id: 'product-photo'} %>
+            <% else %>
+            <%= image_tag ('horses.jpg'), {id: 'product-photo'} %>
+            <% end %>
     <div class="card-product-infos">
       <h2><%= @herd.name %></h2>
       <h5><%= @herd.species %></h5>

@@ -9,11 +9,17 @@
 <% Herd.last(3).each do |herd| %>
   <%= link_to herd_path(herd), :action => 'go' do %>
     <div class="top-card">
-      <%= image_tag ('horses.jpg'), {id: 'product-photo'} %>
+      <% if herd.photo.attached? %>
+        <%= cl_image_tag herd.photo.key, {id: 'product-photo'} %>
+      <% else %>
+        <%= image_tag ('horses.jpg'), {id: 'product-photo'} %>
+      <% end %>
         <div class="top-card-infos">
-          <h2><%= herd.name %></h2>
-          <h2><%= herd.address %></h2>
-          <h2><%= herd.unit_price%> € /day</h2>
+          <div class="design">
+            <h2><%= herd.address %></h2>
+            <h2><%= herd.name %></h2>
+            <h2><%= herd.unit_price%> € /day</h2>
+          </div>
         </div>
     </div>
   <% end %>
