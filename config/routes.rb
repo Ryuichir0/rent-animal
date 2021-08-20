@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :herds do
     resources :bookings
   end
+  resources :bookings, only: [:destroy, :update]
+  resources :herds, only: [:destroy, :edit, :update]
   get 'dashboards/index'
   resources :bookings, only: [:destroy, :edit]
   resources :herds, only: [:destroy, :edit]
