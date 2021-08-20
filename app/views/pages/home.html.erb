@@ -6,6 +6,7 @@
   </div>
 </div>
 <div class="container d-flex justify-content-between mt-5">
+
 <% Herd.last(3).each do |herd| %>
   <%= link_to herd_path(herd), :action => 'go' do %>
     <div class="top-card">
@@ -16,9 +17,10 @@
       <% end %>
         <div class="top-card-infos">
           <div class="design">
-          <h2><%= herd.name %></h2>
-          <h2><%= herd.address %></h2>
-          <h2><%= number_with_precision(herd.unit_price, delimiter: " ", precision: 2)%> € /day</h2>
+            <h2><%= herd.name %></h2>
+            <h2><%= herd.address %></h2>
+            <h2><%= number_with_precision(herd.unit_price, delimiter: " ", precision: 2)%> € /day</h2>
+          </div>
         </div>
     </div>
   <% end %>
