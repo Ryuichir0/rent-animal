@@ -16,4 +16,5 @@ class Herd < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
 end
