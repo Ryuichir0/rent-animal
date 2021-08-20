@@ -43,3 +43,33 @@
   top: -20px;
   width: 40px;
 }
+
+.card-trip-calendar {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-decoration: none;
+  margin: 10px 0px;
+  border-radius: 10px;
+  text-decoration: none;
+  height: 265px;
+}
+
+.card-trip-calendar > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  padding:15px;
+}
+
+.card-trip-calendar h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 15px;
+}
+
+.card-trip-calendar p {
+  font-size: 14px;
+  opacity: .7;
+  margin: 15px;
+}

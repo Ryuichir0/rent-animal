@@ -2,12 +2,13 @@
    <div class="col-bookings">
     <h1>Bookings</h1>
       <% @bookings.each do |booking| %>
-          <div class="card-trip">
+          <div class="card-trip-calendar">
             <h2><%= booking.herd.name %></h2>
             <p>Booking # <%= booking.id %></p>
             <p>check_in: <strong><%= booking.check_in.strftime("%d-%m-%Y") %></strong></p>
             <p>check_out: <strong><%= booking.check_out.strftime("%d-%m-%Y") %></strong></p>
-            <h2>Total Amount: <%= booking.total_amount %> €</h2>
+            <h2><%= number_with_precision(booking.days_booked, precision: 0) %> d</h2>
+            <h2><%= number_with_precision(booking.total_amount, delimiter: " ", precision: 2) %> €</h2>
             <p>
               <%= link_to icon('fas fa-pen', 'edit'), edit_herd_booking_path(@herd, booking.id) %>
               <%= link_to icon('fas fa-trash', 'remove'), booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
@@ -30,5 +31,5 @@
         </div>
     </div>
 </div>
-<div>
+<div style="height: 150px;">
 </div>

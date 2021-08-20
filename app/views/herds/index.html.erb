@@ -14,7 +14,7 @@
                 <p><i class="pr-2 fas fa-frog"></i><%= herd.species.capitalize%></p>
                 <p><i class="pr-2 fas fa-file-prescription"></i><%= herd.description.capitalize %></p>
                 <p><i class="pr-2 fas fa-map-marker-alt"></i><%= herd.address.upcase %></p>
-                <p><i class="pr-2 fas fa-dollar-sign"></i><%= herd.unit_price%> € /day</p>
+                <p><i class="pr-2 fas fa-dollar-sign"><%= number_with_precision(herd.unit_price, delimiter: " ", precision: 2)%> € /day</p>
               </div>
             <% if herd.user.avatar.attached? %>
               <%= cl_image_tag herd.user.avatar.key, :class => "avatar-bordered-product" %>
@@ -27,7 +27,7 @@
       <% end %>
         <%= link_to 'Create a herd', new_herd_path,  class: "btn btn-flat"  %>
       </div>
-    
+
         <div id="map"
           style="width: 100%; height: 600px; border-radius: 10px; margin: 5px 0px;"
           data-markers="<%= @markers.to_json %>"
