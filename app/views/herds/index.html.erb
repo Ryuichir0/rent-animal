@@ -10,13 +10,17 @@
             <%= image_tag ('horses.jpg'), {id: 'product-photo'} %>
             <% end %>
               <div class="card-product-infos">
-                <h5><%= herd.name %></h2>
-                <h5><%= herd.species %></h5>
-                <p><%= herd.description %></p>
-                <h5><%= herd.address %></h4>
-                <h5><%= herd.unit_price%> € /day</h5>
+                <h2><%= herd.name.capitalize! %></h2>
+                <p><i class="pr-2 fas fa-frog"></i><%= herd.species.capitalize%></p>
+                <p><i class="pr-2 fas fa-file-prescription"></i><%= herd.description.capitalize %></p>
+                <p><i class="pr-2 fas fa-map-marker-alt"></i><%= herd.address.upcase %></p>
+                <p><i class="pr-2 fas fa-dollar-sign"></i><%= herd.unit_price%> € /day</p>
               </div>
-              <%= image_tag ('avatar.JPG'), :class => "avatar-bordered-product" %>
+            <% if herd.user.avatar.attached? %>
+              <%= cl_image_tag herd.user.avatar.key, :class => "avatar-bordered-product" %>
+            <% else %>
+              <%= image_tag ('avatar.jpg'), :class => "avatar-bordered-product"%>
+            <% end %>
             </div>
           <% end %>
         <% end %>

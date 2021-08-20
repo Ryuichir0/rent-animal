@@ -39,7 +39,6 @@ class HerdsController < ApplicationController
   def update
     @herd = Herd.find(params[:id])
     @herd.update(herd_params)
-
     redirect_to herd_path(@herd)
   end
 
@@ -47,7 +46,7 @@ class HerdsController < ApplicationController
     @herd = Herd.find(params[:id])
     @herd.destroy
 
-    redirect_to herds_path
+    redirect_to dashboards_index_path(current_user)
   end
 end
 
