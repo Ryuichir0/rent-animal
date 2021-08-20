@@ -105,6 +105,8 @@ GEM
       railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.7.0)
+    faker (2.18.0)
+      i18n (>= 1.6, < 2)
     ffi (1.15.3)
     flatpickr_rails (1.1.0)
       railties (>= 3.0)
@@ -283,6 +285,7 @@ DEPENDENCIES
   cloudinary (~> 1.16.0)
   devise
   dotenv-rails
+  faker
   flatpickr_rails
   font-awesome-sass
   geocoder
